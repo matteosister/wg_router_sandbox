@@ -1,0 +1,198 @@
+{
+  "name": "Wundergraph Playground",
+  "version": "1",
+  "items": [
+    {
+      "type": "graphql",
+      "name": "Server 1 - Add",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:8080/graphql",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "graphql",
+          "graphql": {
+            "query": "{\n  add(a:1, b:10)\n}"
+          },
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "graphql",
+      "name": "Server 2 - Subtract",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:8081/graphql",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "graphql",
+          "graphql": {
+            "query": "{\n  subtract(a:20, b:5)\n}"
+          },
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "graphql",
+      "name": "Server 3 - Multiply",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:8082/graphql",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "graphql",
+          "graphql": {
+            "query": "{\n  multiply(a: 10, b: 3)\n}\n"
+          },
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "graphql",
+      "name": "Federated Schema",
+      "seq": 7,
+      "request": {
+        "url": "http://localhost:3002/graphql",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "graphql",
+          "graphql": {
+            "query": "{\n  add(a: 1, b: 10)\n  subtract(a: 20, b: 5)\n  multiply(a: 10, b: 3)\n\n  quote(id: 1) {\n    id\n    plateNumber\n    price\n    commissions {\n      id\n      amount\n    }\n    claims {\n      id\n      lost\n      vehicle\n      paid\n    }\n  }\n}\n"
+          },
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "graphql",
+      "name": "Server 1 - Quote",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:8080/graphql",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "graphql",
+          "graphql": {
+            "query": "{\n  quote(id:1) {\n    id\n    plateNumber\n    price\n  }\n}"
+          },
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "graphql",
+      "name": "Server 2 - Commissions",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:8081/graphql",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "graphql",
+          "graphql": {
+            "query": "{\n  commissions{\n    id\n    amount\n  }\n}"
+          },
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "graphql",
+      "name": "Server 3 - Claims",
+      "seq": 6,
+      "request": {
+        "url": "http://localhost:8082/graphql",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "graphql",
+          "graphql": {
+            "query": "{\n  claim(id: 1) {\n    id\n    paid\n    vehicle\n  }\n}\n"
+          },
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Wundergraph Playground",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
