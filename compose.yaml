@@ -8,6 +8,8 @@ services:
     command: run
     ports:
       - '8080:8080'
+    environment:
+      RUST_LOG: "debug"
     healthcheck:
       test: "curl http://localhost:8080/check || exit 1"
       interval: 10s
@@ -24,6 +26,8 @@ services:
     command: run
     ports:
       - '8081:8081'
+    environment:
+      RUST_LOG: "debug"
     healthcheck:
       test: "curl http://localhost:8081/check || exit 1"
       interval: 10s
